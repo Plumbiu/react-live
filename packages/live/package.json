@@ -1,0 +1,34 @@
+{
+  "name": "@plumbiu/react-live",
+  "version": "0.0.1",
+  "description": "Render live React components.",
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "keywords": [
+    "react",
+    "live",
+    "preview"
+  ],
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sucrase": "^3.35.0"
+  }
+}
