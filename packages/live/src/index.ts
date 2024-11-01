@@ -1,4 +1,4 @@
-import React, { createElement } from 'react'
+import React, { createElement, memo } from 'react'
 import { transform, Options } from 'sucrase'
 
 type Scope = Record<string, any>
@@ -24,7 +24,7 @@ interface PlaygroundPreviewProps {
   scope?: Scope
 }
 
-export function Preview({ code, scope }: PlaygroundPreviewProps) {
+export const Preview = memo(({ code, scope }: PlaygroundPreviewProps) => {
   const evalScope: Scope = {
     react: React,
     React: React,
@@ -32,4 +32,4 @@ export function Preview({ code, scope }: PlaygroundPreviewProps) {
   }
   const mainCode = transform(code, transfromOptions).code
   return createElement(evalCode(mainCode, evalScope))
-}
+})
